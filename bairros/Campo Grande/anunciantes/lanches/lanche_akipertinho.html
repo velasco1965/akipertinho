@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome do Estabelecimento · Aki‑pertinho</title>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+        body {
+            background: #f5f5f5;
+            padding: 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+        /* Botão voltar */
+        .btn-voltar {
+            background: white;
+            border: 2px solid #0b4f3a;
+            color: #0b4f3a;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+        .btn-voltar:hover {
+            background: #0b4f3a;
+            color: white;
+        }
+        /* Tarja de sub-bairro (amarelo com texto azul) */
+        .subbairro-tarja {
+            background: #FFD700;        /* amarelo ouro */
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 40px;
+            margin-bottom: 15px;
+            border: 2px solid #0000FF;  /* borda azul */
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #0000FF;              /* texto azul */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .subbairro-tarja i {
+            margin-right: 8px;
+            color: #0000FF;
+        }
+        /* Cabeçalho */
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #0b4f3a;  /* cor principal (pode ser alterada por categoria) */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .endereco-completo {
+            color: #555;
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+        /* Seções */
+        .categoria-titulo {
+            font-size: 2rem;
+            color: #0b4f3a;
+            border-left: 8px solid #0b4f3a;
+            padding-left: 1rem;
+            margin: 2rem 0 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+        }
+        th {
+            background: #0b4f3a;
+            color: white;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .preco {
+            font-weight: 700;
+            color: #e67e22; /* cor de destaque */
+        }
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 500px;
+            margin: 2rem auto;
+            transition: 0.2s;
+        }
+        .whatsapp-btn:hover {
+            background: #20b859;
+            transform: scale(1.02);
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+            color: #0b4f3a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Botão voltar para o início -->
+        <button class="btn-voltar" onclick="voltarParaInicio()">
+            <i class="fas fa-home"></i> Início
+        </button>
+
+        <!-- Tarja de sub-bairro (AMARELO + AZUL) -->
+        <div style="text-align: center;">
+            <div class="subbairro-tarja">
+                <i class="fas fa-map-pin"></i> Monteiro
+            </div>
+        </div>
+
+        <!-- Cabeçalho com nome e endereço completo -->
+        <header>
+            <h1>
+                <i class="fas fa-store"></i> 
+                LANCHE AKIPERTINHO
+            </h1>
+            <p class="endereco-completo">
+                📍 ESTRADA DO MONTEIRO, 123 - Monteiro, Campo Grande
+            </p>
+        </header>
+
+        <!-- Categoria 1 (ex: Lanches) -->
+        <h2 class="categoria-titulo">🍔 Lanches</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>X-Burguer</td>
+                    <td>Pão, hambúrguer, queijo, alface</td>
+                    <td class="preco">R$ 12,90</td>
+                </tr>
+                <tr>
+                    <td>X-Salada</td>
+                    <td>Pão, hambúrguer, queijo, alface, tomate</td>
+                    <td class="preco">R$ 14,90</td>
+                </tr>
+                <tr>
+                    <td>X-Bacon</td>
+                    <td>Pão, hambúrguer, queijo, bacon</td>
+                    <td class="preco">R$ 17,90</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Categoria 2 (opcional) -->
+        <h2 class="categoria-titulo">🥤 Bebidas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Refrigerante Lata</td>
+                    <td>Coca-cola, Guaraná, Fanta</td>
+                    <td class="preco">R$ 4,90</td>
+                </tr>
+                <tr>
+                    <td>Suco Natural</td>
+                    <td>Laranja, Maracujá, Limão (500ml)</td>
+                    <td class="preco">R$ 6,90</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Botão WhatsApp -->
+        <button class="whatsapp-btn" onclick="enviarWhatsApp()">
+            <i class="fab fa-whatsapp"></i> FAZER PEDIDO
+        </button>
+
+        <!-- Rodapé com telefone e horário -->
+        <footer>
+            <p><i class="fab fa-whatsapp"></i> (21) 99999-9999</p>
+            <p>🕒 Segunda a Sábado: 18h às 23h | Domingo: 17h às 22h</p>
+        </footer>
+    </div>
+
+    <script>
+        // Função para voltar ao início (index) – caminho ajustado para Campo Grande
+        function voltarParaInicio() {
+            window.location.href = '../../../../index.html';
+        }
+
+        // Função para abrir WhatsApp
+        function enviarWhatsApp() {
+            const telefone = '5521999999999'; // substitua pelo número real (apenas números, com DDI 55)
+            const mensagem = 'Olá! Vi seu anúncio no Aki‑pertinho (Monteiro). Gostaria de fazer um pedido.';
+            window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`, '_blank');
+        }
+    </script>
+</body>
+</html>

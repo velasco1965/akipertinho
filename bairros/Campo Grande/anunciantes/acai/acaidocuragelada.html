@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaí Doçura Gelada · Aki‑pertinho</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+        body {
+            background: #f8f0fc;
+            padding: 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(155, 89, 182, 0.2);
+            padding: 2rem;
+        }
+
+        /* BOTÃO VOLTAR */
+        .btn-voltar {
+            background: white;
+            border: 2px solid #9b59b6;
+            color: #9b59b6;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 10px 25px;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+        .btn-voltar:hover {
+            background: #9b59b6;
+            color: white;
+        }
+
+        /* Tarja de sub‑bairro */
+        .subbairro-tarja {
+            background: #FFD700;
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 40px;
+            margin-bottom: 15px;
+            border: 2px solid #0000FF;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #0000FF;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .subbairro-tarja i {
+            margin-right: 8px;
+            color: #0000FF;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #9b59b6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .endereco-completo {
+            color: #555;
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .categoria-titulo {
+            font-size: 2rem;
+            color: #9b59b6;
+            border-left: 8px solid #9b59b6;
+            padding-left: 1rem;
+            margin: 2rem 0 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+        }
+        th {
+            background: #9b59b6;
+            color: white;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #e6ccff;
+        }
+        .preco {
+            font-weight: 700;
+            color: #9b59b6;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 500px;
+            margin: 2rem auto;
+            transition: 0.2s;
+        }
+        .whatsapp-btn:hover {
+            background: #20b859;
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e6ccff;
+            color: #9b59b6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- BOTÃO VOLTAR PRA CASA -->
+        <button class="btn-voltar" onclick="voltarParaInicio()">
+            <i class="fas fa-home"></i> Início
+        </button>
+
+        <!-- TARJA DO SUB‑BAIRRO -->
+        <div style="text-align: center;">
+            <div class="subbairro-tarja">
+                <i class="fas fa-map-pin"></i> Monteiro
+            </div>
+        </div>
+
+        <!-- CABEÇALHO -->
+        <header>
+            <h1>
+                <i class="fas fa-ice-cream"></i>
+                Açaí Doçura Gelada
+            </h1>
+            <p class="endereco-completo">
+                📍 Estrada do Monteiro, 123 – Monteiro, Campo Grande
+            </p>
+        </header>
+
+        <!-- CATEGORIA 1: AÇAÍS -->
+        <h2 class="categoria-titulo">🍧 Tigelas de Açaí</h2>
+        <table>
+            <thead>
+                <tr><th>Produto</th><th>Descrição</th><th>Preço</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Açaí 300ml</td><td>com granola e banana</td><td class="preco">R$ 12,90</td></tr>
+                <tr><td>Açaí 500ml</td><td>com granola, banana e leite condensado</td><td class="preco">R$ 18,90</td></tr>
+                <tr><td>Açaí 700ml</td><td>com todas as coberturas</td><td class="preco">R$ 24,90</td></tr>
+            </tbody>
+        </table>
+
+        <!-- CATEGORIA 2: SORVETES E BEBIDAS -->
+        <h2 class="categoria-titulo">🍦 Sorvetes & Bebidas</h2>
+        <table>
+            <thead>
+                <tr><th>Produto</th><th>Descrição</th><th>Preço</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Sorvete 1 bola</td><td>creme, chocolate, morango</td><td class="preco">R$ 6,90</td></tr>
+                <tr><td>Milk‑shake</td><td>400ml – diversos sabores</td><td class="preco">R$ 15,90</td></tr>
+                <tr><td>Suco natural</td><td>500ml – laranja, maracujá</td><td class="preco">R$ 7,90</td></tr>
+            </tbody>
+        </table>
+
+        <!-- BOTÃO WHATSAPP -->
+        <button class="whatsapp-btn" onclick="enviarWhatsApp()">
+            <i class="fab fa-whatsapp"></i> FAZER PEDIDO
+        </button>
+
+        <!-- RODAPÉ -->
+        <footer>
+            <p><i class="fab fa-whatsapp"></i> (21) 99999-9999</p>
+            <p>🕒 Terça a Domingo: 14h às 22h</p>
+        </footer>
+    </div>
+
+    <script>
+        // FUNÇÃO PARA VOLTAR AO INÍCIO (index)
+        function voltarParaInicio() {
+            window.location.href = '../../../../index.html';
+        }
+
+        // FUNÇÃO DO WHATSAPP
+        function enviarWhatsApp() {
+            const telefone = '5521999999999'; // troque pelo número real
+            const mensagem = 'Olá! Vi o Açaí Doçura Gelada no Aki‑pertinho (Monteiro). Quero fazer um pedido.';
+            window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
