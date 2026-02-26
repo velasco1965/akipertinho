@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOME_DO_ACAI · Aki‑pertinho</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #f8f0fc; padding: 1rem; }
+        .container {
+            max-width: 1280px; margin: 0 auto; background: white;
+            border-radius: 32px; box-shadow: 0 12px 30px rgba(106,13,173,0.15);
+            padding: 2rem;
+        }
+        .btn-voltar {
+            background: white; border: 2px solid #9b59b6; color: #9b59b6;
+            padding: 10px 25px; border-radius: 40px; cursor: pointer;
+            margin-bottom: 20px; display: inline-block;
+        }
+        header { text-align: center; margin-bottom: 2rem; }
+        header h1 { font-size: 2.5rem; color: #9b59b6; }
+        table {
+            width: 100%; border-collapse: collapse; margin: 2rem 0;
+        }
+        th { background: #9b59b6; color: white; padding: 1rem; }
+        td { padding: 1rem; border-bottom: 1px solid #e6ccff; }
+        .preco { color: #9b59b6; font-weight: 700; }
+        .whatsapp-btn {
+            background: #25d366; color: white; font-size: 1.5rem;
+            padding: 1rem; border: none; border-radius: 60px;
+            display: block; width: 100%; max-width: 500px; margin: 2rem auto;
+            cursor: pointer;
+        }
+        footer { text-align: center; margin-top: 2rem; color: #9b59b6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="btn-voltar" onclick="window.location.href='../../../../index.html'">
+            <i class="fas fa-home"></i> Início
+        </button>
+
+        <header>
+            <h1><i class="fas fa-ice-cream"></i> AÇAI AQUI PERTINHO</h1>
+            <p>📍 Rua iconha qd 79 lote 03</p>
+        </header>
+
+        <h2 style="color:#9b59b6;">🍧 Sabores</h2>
+        <table>
+            <thead><tr><th>Produto</th><th>Tamanho</th><th>Preço</th></tr></thead>
+            <tbody>
+                <tr><td>Açaí</td><td>300ml</td><td class="preco">R$ 12,90</td></tr>
+                <tr><td>Açaí</td><td>500ml</td><td class="preco">R$ 18,90</td></tr>
+                <tr><td>Cupuaçu</td><td>300ml</td><td class="preco">R$ 13,90</td></tr>
+                <tr><td>Sorvete</td><td>1 bola</td><td class="preco">R$ 6,90</td></tr>
+            </tbody>
+        </table>
+
+        <button class="whatsapp-btn" onclick="enviarWhatsApp()">
+            <i class="fab fa-whatsapp"></i> FAZER PEDIDO
+        </button>
+
+        <footer>
+            <p>🕒 das 19:00 ás 01:00</p>
+            <p><i class="fab fa-whatsapp"></i> 21920121710</p>
+        </footer> ,
+		
+		,'1
+		.       
+    </div>
+
+    <script>
+        function enviarWhatsApp() {
+            const telefone = '21920121710'.replace(/\D/g, '');
+            const mensagem = 'Olá, vi vocês no Aki‑pertinho! Quero fazer um pedido.';
+            window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
+        }
+    </script>
+</body>
+</html>
