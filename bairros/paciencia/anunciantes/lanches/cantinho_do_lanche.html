@@ -152,34 +152,35 @@
             <p>🕒 Todos os dias: 14h às 23h</p>
         </footer>
     </div>
+<script>
+    document.getElementById('gerarLink').addEventListener('click', function() {
+        const nome = document.getElementById('nome').value.trim();
+        const endereco = document.getElementById('endereco').value.trim();
+        const pagamento = document.getElementById('pagamento').value;
+        const telefone = document.getElementById('telefone').value.trim() || 'não informado';
+        const descricao = document.getElementById('descricao').value.trim();
 
-    <script>
-        document.getElementById('gerarLink').addEventListener('click', function() {
-            const nome = document.getElementById('nome').value.trim();
-            const endereco = document.getElementById('endereco').value.trim();
-            const pagamento = document.getElementById('pagamento').value;
-            const telefone = document.getElementById('telefone').value.trim() || 'não informado';
-            const descricao = document.getElementById('descricao').value.trim();
+        if (!nome || !endereco || !pagamento || !descricao) {
+            alert('Preencha nome, endereço, pagamento e pedido.');
+            return;
+        }
 
-            if (!nome || !endereco || !pagamento || !descricao) {
-                alert('Preencha nome, endereço, pagamento e pedido.');
-                return;
-            }
+        const mensagem = `🪴 *Aki‑pertinho* 🏠
 
-            const mensagem = `*Pedido (Aki‑pertinho)- Cantinho do Lanche *%0a` +
-                `*Nome:* ${nome}%0a` +
-                `*Endereço:* ${endereco}%0a` +
-                `*Pagamento:* ${pagamento}%0a` +
-                `*Telefone:* ${telefone}%0a` +
-                `*Pedido:* ${descricao}`;
+*Nome:* ${nome}
+*Endereço:* ${endereco}
+*Pagamento:* ${pagamento}
+*Telefone:* ${telefone}
 
-            const numero = '5521967528682';
-            const link = `https://wa.me/${numero}?text=${mensagem}`;
-            window.open(link, '_blank');
-            document.getElementById('linkWhatsApp').href = link;
-            document.getElementById('linkContainer').style.display = 'block';
-        });
-    </script>
+*Pedido:*
+${descricao}`;
+
+        const numero = '5521920121710';
+        const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+        window.open(link, '_blank');
+        document.getElementById('linkWhatsApp').href = link;
+        document.getElementById('linkContainer').style.display = 'block';
+    });
+</script>
 </body>
 </html>
-
