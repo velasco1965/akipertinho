@@ -291,6 +291,126 @@
         .text-center {
             text-align: center;
         }
+		/* ===== RESPONSIVIDADE PROFISSIONAL ===== */
+@media screen and (max-width: 768px) {
+    .topo {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 1rem;
+    }
+
+    .logo-area h1 {
+        font-size: 1.8rem;
+        justify-content: center;
+    }
+
+    .nav-botoes {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-botoes button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .seletor-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .seletor-titulo {
+        font-size: 1.5rem;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .bairro-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .bairro-select {
+        width: 100%;
+    }
+
+    .bairro-select select {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .btn-confirmar {
+        width: 100%;
+        justify-content: center;
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+
+    .categoria-botoes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cat-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 1.2rem;
+        padding: 12px;
+    }
+
+    .lista-anunciantes {
+        grid-template-columns: 1fr;
+    }
+
+    .anunciante-card {
+        padding: 1rem;
+    }
+
+    .anunciante-nome {
+        font-size: 1.4rem;
+    }
+
+    .aviso-simples div {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+}
+
+/* Para celulares muito pequenos */
+@media screen and (max-width: 480px) {
+    .logo-area h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo-area p {
+        font-size: 0.9rem;
+    }
+
+    .seletor-titulo {
+        font-size: 1.3rem;
+    }
+
+    .categoria-titulo {
+        font-size: 1.3rem;
+    }
+
+    .cat-btn i {
+        font-size: 1.3rem;
+    }
+
+    .anunciante-icone {
+        font-size: 2.5rem;
+    }
+
+    .anunciante-nome {
+        font-size: 1.2rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -721,4 +841,5 @@
 </footer>
 
 </body>
+
 </html>
