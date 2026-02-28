@@ -152,7 +152,26 @@
             <p>🕒 Todos os dias: 14h às 23h</p>
         </footer>
     </div>
-<script>
+	<!-- CONTADOR DE PEDIDOS -->
+<div style="background: linear-gradient(145deg, #25d366, #20b859); color: white; padding: 12px 20px; border-radius: 60px; text-align: center; margin: 20px 0; font-size: 1.2rem; font-weight: bold; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);">
+    <i class="fas fa-chart-line"></i> 
+    <span id="contadorPedidos">0</span> pedidos realizados!
+</div>
+	
+	<script>
+    // ===== CONTADOR AUTOMÁTICO DE PEDIDOS =====
+    let chaveContador = 'pedidos_cantinho'; // nome único pra cada cliente
+    let contador = localStorage.getItem(chaveContador) ? parseInt(localStorage.getItem(chaveContador)) : 0;
+
+    // Mostra o contador na tela assim que a página carrega
+    window.onload = function() {
+        let elementoContador = document.getElementById('contadorPedidos');
+        if (elementoContador) {
+            elementoContador.innerText = contador;
+        }
+    };
+
+    // ===== ENVIO DO FORMULÁRIO COM WHATSAPP =====
     document.getElementById('gerarLink').addEventListener('click', function() {
         const nome = document.getElementById('nome').value.trim();
         const endereco = document.getElementById('endereco').value.trim();
@@ -165,6 +184,17 @@
             return;
         }
 
+        // ===== AUMENTA O CONTADOR =====
+        contador++;
+        localStorage.setItem(chaveContador, contador);
+        
+        // Atualiza na tela
+        let elementoContador = document.getElementById('contadorPedidos');
+        if (elementoContador) {
+            elementoContador.innerText = contador;
+        }
+
+        // ===== CRIA A MENSAGEM ORGANIZADA =====
         const mensagem = `🪴 *Aki‑pertinho* 🏠
 
 *Nome:* ${nome}
@@ -175,9 +205,11 @@
 *Pedido:*
 ${descricao}`;
 
-        const numero = '5521920121710';
+        const numero = '5521967528682';
         const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
         window.open(link, '_blank');
+        
+        // Mostra link alternativo
         document.getElementById('linkWhatsApp').href = link;
         document.getElementById('linkContainer').style.display = 'block';
     });
