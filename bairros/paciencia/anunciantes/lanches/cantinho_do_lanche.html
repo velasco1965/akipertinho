@@ -6,75 +6,276 @@
     <title>Cantinho do Lanche · Aki‑pertinho</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Roboto,sans-serif; }
-        body { background:#fce5d7; padding:1rem; }
-        .container { max-width:1200px; margin:0 auto; background:white; border-radius:40px; padding:2rem; box-shadow:0 20px 40px rgba(230,57,70,0.15); }
-        .btn-voltar {
-            background:white; border:2px solid #e63946; color:#e63946; padding:10px 25px; border-radius:40px;
-            display:inline-flex; align-items:center; gap:8px; margin-bottom:20px; cursor:pointer;
-            transition:0.3s;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
         }
-        .btn-voltar:hover { background:#e63946; color:white; }
-        .subbairro-tarja {
-            background:#FFD700; border:2px solid #0000FF; color:#0000FF; padding:6px 20px; border-radius:40px;
-            display:inline-block; margin-bottom:15px; font-weight:bold;
-        }
-        header { text-align:center; margin-bottom:2rem; }
-        header h1 { font-size:2.5rem; color:#e63946; display:flex; align-items:center; justify-content:center; gap:15px; }
-        header h1 i { color:#f39c12; }
-        .categoria-titulo {
-            background:linear-gradient(135deg,#e63946,#f39c12); color:white; padding:12px 25px;
-            border-radius:0 50px 50px 0; width:fit-content; margin:30px 0 20px -20px;
-            box-shadow:0 8px 20px rgba(230,57,70,0.3);
-        }
-        .tabela-wrapper { overflow-x:auto; margin:20px 0; }
-        table { width:100%; border-collapse:collapse; min-width:300px; background:white; border-radius:20px; overflow:hidden; }
-        th { background:#e63946; color:white; padding:12px; font-size:1rem; }
-        td { padding:10px; border-bottom:1px solid #ffe0d0; font-size:0.95rem; word-break:break-word; }
-        .preco { font-weight:700; color:#e67e22; white-space:nowrap; }
 
-        /* FORMULÁRIO WHATSAPP (igual ao da farmácia) */
+        body {
+            background: #fce5d7;
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 40px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(230, 57, 70, 0.15);
+        }
+
+        .btn-voltar {
+            background: white;
+            border: 2px solid #e63946;
+            color: #e63946;
+            padding: 10px 25px;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-voltar:hover {
+            background: #e63946;
+            color: white;
+        }
+
+        .subbairro-tarja {
+            background: #FFD700;
+            border: 2px solid #0000FF;
+            color: #0000FF;
+            padding: 6px 20px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #e63946;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        header h1 i {
+            color: #f39c12;
+        }
+
+        /* HORÁRIO DE FUNCIONAMENTO (inserido ao lado do título "Lanches") */
+        .info-horario {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 10px 0 20px;
+            background: #fff5f0;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid #e63946;
+        }
+
+        .info-horario i {
+            color: #e63946;
+            margin-right: 8px;
+        }
+
+        .horario-texto {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #e63946;
+        }
+
+        .categoria-titulo {
+            background: linear-gradient(135deg, #e63946, #f39c12);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 0 50px 50px 0;
+            width: fit-content;
+            margin: 30px 0 20px -20px;
+            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+        }
+
+        .tabela-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 300px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #e63946;
+            color: white;
+            padding: 12px;
+            font-size: 1rem;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ffe0d0;
+            font-size: 0.95rem;
+            word-break: break-word;
+        }
+
+        .preco {
+            font-weight: 700;
+            color: #e67e22;
+            white-space: nowrap;
+        }
+
+        /* FORMULÁRIO WHATSAPP */
         .pedido-section {
-            background:#fff5f0; border-radius:32px; padding:2rem; border:2px dashed #e63946; margin-top:2rem;
+            background: #fff5f0;
+            border-radius: 32px;
+            padding: 2rem;
+            border: 2px dashed #e63946;
+            margin-top: 2rem;
         }
-        .pedido-section h2 { font-size:2rem; color:#e63946; display:flex; align-items:center; gap:12px; margin-bottom:1rem; }
+
+        .pedido-section h2 {
+            font-size: 2rem;
+            color: #e63946;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+
         .form-grid {
-            display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1.5rem; margin:2rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
-        .campo { display:flex; flex-direction:column; gap:0.3rem; }
-        .campo.full-width { grid-column:1/-1; }
-        label { font-weight:600; color:#e63946; font-size:1.1rem; }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .campo.full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-weight: 600;
+            color: #e63946;
+            font-size: 1.1rem;
+        }
+
         input, select, textarea {
-            padding:0.9rem 1rem; border:2px solid #f39c12; border-radius:24px; font-size:1rem;
+            padding: 0.9rem 1rem;
+            border: 2px solid #f39c12;
+            border-radius: 24px;
+            font-size: 1rem;
         }
+
         .whatsapp-btn {
-            background:#25d366; color:white; font-size:1.5rem; font-weight:700; padding:1.2rem 2rem;
-            border:none; border-radius:60px; display:flex; align-items:center; justify-content:center;
-            gap:15px; cursor:pointer; width:100%; max-width:500px; margin:1.5rem auto; transition:0.2s;
+            background: #25d366;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 500px;
+            margin: 1.5rem auto;
+            transition: 0.2s;
         }
-        .whatsapp-btn:hover { transform:scale(1.02); }
-        footer { text-align:center; margin-top:2rem; padding-top:1rem; border-top:2px solid #ffe0d0; color:#e63946; }
-        @media (max-width:600px) {
-            .container { padding:1rem; }
-            header h1 { font-size:2rem; }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 2px solid #ffe0d0;
+            color: #e63946;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .info-horario {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <button class="btn-voltar" onclick="window.location.href='../../../../index.html'"><i class="fas fa-home"></i> Início</button>
-        <div style="text-align:center;"><span class="subbairro-tarja"><i class="fas fa-map-pin"></i> Três Pontes</span></div>
-        
+        <!-- Botão voltar -->
+        <button class="btn-voltar" onclick="window.location.href='../../../../index.html'">
+            <i class="fas fa-home"></i> Início
+        </button>
+
+        <!-- Tarja de sub‑bairro -->
+        <div style="text-align: center;">
+            <span class="subbairro-tarja">
+                <i class="fas fa-map-pin"></i> Três Pontes
+            </span>
+        </div>
+
+        <!-- Cabeçalho -->
         <header>
-            <h1><i class="fas fa-store"></i> CANTINHO DO LANCHE</h1>
+            <h1>
+                <i class="fas fa-store"></i> CANTINHO DO LANCHE
+            </h1>
             <p>📍 Rua Iconha, 75 – Três Pontes, Paciência</p>
         </header>
+
+        <!-- HORÁRIO DE FUNCIONAMENTO (inserido ao lado do título "Lanches") -->
+        <div class="info-horario">
+            <span><i class="fas fa-clock"></i> <strong>Horário de funcionamento:</strong></span>
+            <span class="horario-texto"><i class="fas fa-calendar-alt"></i> Todos os dias • 14h às 23h</span>
+        </div>
 
         <!-- LANCHES -->
         <div class="categoria-titulo">🍔 Lanches</div>
         <div class="tabela-wrapper">
             <table>
-                <thead><tr><th>Produto</th><th>Descrição</th><th>Preço</th></tr></thead>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr><td>Hambúrguer</td><td>Carne, salada, queijo ralado, batata palha</td><td class="preco">R$ 6,00</td></tr>
                     <tr><td>X-Bacon</td><td>Carne, ovo, queijo ralado, bacon, presunto, milho, ervilha, salada, batata palha</td><td class="preco">R$ 10,00</td></tr>
@@ -91,7 +292,13 @@
         <div class="categoria-titulo">🥤 Bebidas</div>
         <div class="tabela-wrapper">
             <table>
-                <thead><tr><th>Produto</th><th>Descrição</th><th>Preço</th></tr></thead>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr><td>Coca‑Cola 2L</td><td>Garrafa</td><td class="preco">R$ 12,00</td></tr>
                     <tr><td>Guaraná 2L</td><td>Garrafa</td><td class="preco">R$ 10,00</td></tr>
@@ -108,7 +315,13 @@
         <div class="categoria-titulo">🥟 Salgados & Empadas</div>
         <div class="tabela-wrapper">
             <table>
-                <thead><tr><th>Produto</th><th>Descrição</th><th>Preço</th></tr></thead>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr><td>Empada de Frango</td><td>Unidade</td><td class="preco">R$ 6,00</td></tr>
                     <tr><td>Empada de Camarão</td><td>Unidade</td><td class="preco">R$ 7,00</td></tr>
@@ -119,13 +332,19 @@
             </table>
         </div>
 
-        <!-- FORMULÁRIO WHATSAPP (igual ao da farmácia) -->
+        <!-- FORMULÁRIO WHATSAPP -->
         <section class="pedido-section">
             <h2><i class="fab fa-whatsapp"></i> Faça seu pedido</h2>
             <form id="formPedido">
                 <div class="form-grid">
-                    <div class="campo"><label>Nome completo *</label><input type="text" id="nome" required></div>
-                    <div class="campo"><label>Endereço *</label><input type="text" id="endereco" required></div>
+                    <div class="campo">
+                        <label>Nome completo *</label>
+                        <input type="text" id="nome" required>
+                    </div>
+                    <div class="campo">
+                        <label>Endereço *</label>
+                        <input type="text" id="endereco" required>
+                    </div>
                     <div class="campo">
                         <label>Forma de pagamento *</label>
                         <select id="pagamento" required>
@@ -136,83 +355,81 @@
                             <option value="Pix">Pix</option>
                         </select>
                     </div>
-                    <div class="campo"><label>Telefone (opcional)</label><input type="tel" id="telefone"></div>
-                    <div class="campo full-width"><label>Seu pedido *</label><textarea id="descricao" rows="3" required></textarea></div>
+                    <div class="campo">
+                        <label>Telefone (opcional)</label>
+                        <input type="tel" id="telefone">
+                    </div>
+                    <div class="campo full-width">
+                        <label>Seu pedido *</label>
+                        <textarea id="descricao" rows="3" required></textarea>
+                    </div>
                 </div>
-                <button type="button" class="whatsapp-btn" id="gerarLink"><i class="fab fa-whatsapp"></i> Enviar pedido</button>
+                <button type="button" class="whatsapp-btn" id="gerarLink">
+                    <i class="fab fa-whatsapp"></i> Enviar pedido
+                </button>
             </form>
-            <div id="linkContainer" style="display:none; text-align:center; margin-top:10px;">
+            <div id="linkContainer" style="display: none; text-align: center; margin-top: 10px;">
                 <a href="#" id="linkWhatsApp" target="_blank">Clique aqui se não for redirecionado</a>
             </div>
-            <p style="text-align:center; margin-top:1rem;"><i class="fas fa-info-circle"></i> Pedido enviado com a identificação <strong>Aki‑pertinho</strong>.</p>
+            <p style="text-align: center; margin-top: 1rem;">
+                <i class="fas fa-info-circle"></i> Pedido enviado com a identificação <strong>Aki‑pertinho</strong>.
+            </p>
         </section>
 
+        <!-- Rodapé -->
         <footer>
             <p><i class="fab fa-whatsapp"></i> (21) 96752-8682</p>
             <p>🕒 Todos os dias: 14h às 23h</p>
         </footer>
     </div>
-	<!-- CONTADOR DE PEDIDOS -->
-<div style="background: linear-gradient(145deg, #25d366, #20b859); color: white; padding: 12px 20px; border-radius: 60px; text-align: center; margin: 20px 0; font-size: 1.2rem; font-weight: bold; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);">
-    <i class="fas fa-chart-line"></i> 
-    <span id="contadorPedidos">0</span> pedidos realizados!
-</div>
-	
-	<script>
-    // ===== CONTADOR AUTOMÁTICO DE PEDIDOS =====
-    let chaveContador = 'pedidos_cantinho'; // nome único pra cada cliente
-    let contador = localStorage.getItem(chaveContador) ? parseInt(localStorage.getItem(chaveContador)) : 0;
 
-    // Mostra o contador na tela assim que a página carrega
-    window.onload = function() {
-        let elementoContador = document.getElementById('contadorPedidos');
-        if (elementoContador) {
-            elementoContador.innerText = contador;
-        }
-    };
+    <!-- CONTADOR DE PEDIDOS -->
+    <div style="background: linear-gradient(145deg, #25d366, #20b859); color: white; padding: 12px 20px; border-radius: 60px; text-align: center; margin: 20px 0; font-size: 1.2rem; font-weight: bold; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);">
+        <i class="fas fa-chart-line"></i>
+        <span id="contadorPedidos">0</span> pedidos realizados!
+    </div>
 
-    // ===== ENVIO DO FORMULÁRIO COM WHATSAPP =====
-    document.getElementById('gerarLink').addEventListener('click', function() {
-        const nome = document.getElementById('nome').value.trim();
-        const endereco = document.getElementById('endereco').value.trim();
-        const pagamento = document.getElementById('pagamento').value;
-        const telefone = document.getElementById('telefone').value.trim() || 'não informado';
-        const descricao = document.getElementById('descricao').value.trim();
+    <script>
+        // ===== CONTADOR AUTOMÁTICO DE PEDIDOS =====
+        let chaveContador = 'pedidos_cantinho';
+        let contador = localStorage.getItem(chaveContador) ? parseInt(localStorage.getItem(chaveContador)) : 0;
 
-        if (!nome || !endereco || !pagamento || !descricao) {
-            alert('Preencha nome, endereço, pagamento e pedido.');
-            return;
-        }
+        window.onload = function() {
+            let elementoContador = document.getElementById('contadorPedidos');
+            if (elementoContador) {
+                elementoContador.innerText = contador;
+            }
+        };
 
-        // ===== AUMENTA O CONTADOR =====
-        contador++;
-        localStorage.setItem(chaveContador, contador);
-        
-        // Atualiza na tela
-        let elementoContador = document.getElementById('contadorPedidos');
-        if (elementoContador) {
-            elementoContador.innerText = contador;
-        }
+        document.getElementById('gerarLink').addEventListener('click', function() {
+            const nome = document.getElementById('nome').value.trim();
+            const endereco = document.getElementById('endereco').value.trim();
+            const pagamento = document.getElementById('pagamento').value;
+            const telefone = document.getElementById('telefone').value.trim() || 'não informado';
+            const descricao = document.getElementById('descricao').value.trim();
 
-        // ===== CRIA A MENSAGEM ORGANIZADA =====
-        const mensagem = `🪴 *Aki‑pertinho* 🏠
+            if (!nome || !endereco || !pagamento || !descricao) {
+                alert('Preencha nome, endereço, pagamento e pedido.');
+                return;
+            }
 
-*Nome:* ${nome}
-*Endereço:* ${endereco}
-*Pagamento:* ${pagamento}
-*Telefone:* ${telefone}
+            contador++;
+            localStorage.setItem(chaveContador, contador);
 
-*Pedido:*
-${descricao}`;
+            let elementoContador = document.getElementById('contadorPedidos');
+            if (elementoContador) {
+                elementoContador.innerText = contador;
+            }
 
-        const numero = '5521967528682';
-        const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-        window.open(link, '_blank');
-        
-        // Mostra link alternativo
-        document.getElementById('linkWhatsApp').href = link;
-        document.getElementById('linkContainer').style.display = 'block';
-    });
-</script>
+            const mensagem = `🪴 *Aki‑pertinho* 🏠\n\n*Nome:* ${nome}\n*Endereço:* ${endereco}\n*Pagamento:* ${pagamento}\n*Telefone:* ${telefone}\n\n*Pedido:*\n${descricao}`;
+
+            const numero = '5521967528682';
+            const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+            window.open(link, '_blank');
+
+            document.getElementById('linkWhatsApp').href = link;
+            document.getElementById('linkContainer').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
