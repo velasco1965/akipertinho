@@ -273,17 +273,6 @@
             border-radius: 60px;
         }
 
-        /* Rodapé */
-        footer {
-            background: #cceae0;
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 1rem;
-            color: #1d5e45;
-            margin-top: 2rem;
-            border-top: 3px solid #a8d5ba;
-        }
-
         /* utilitários */
         .hidden {
             display: none !important;
@@ -291,126 +280,97 @@
         .text-center {
             text-align: center;
         }
-		/* ===== RESPONSIVIDADE PROFISSIONAL ===== */
-@media screen and (max-width: 768px) {
-    .topo {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-        padding: 1rem;
-    }
+		
+        /* ===== RESPONSIVIDADE PROFISSIONAL ===== */
+        @media screen and (max-width: 768px) {
+            .topo {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+                padding: 1rem;
+            }
+            .logo-area h1 {
+                font-size: 1.8rem;
+                justify-content: center;
+            }
+            .nav-botoes {
+                justify-content: center;
+                gap: 10px;
+            }
+            .nav-botoes button {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+            .seletor-card {
+                padding: 1.5rem 1rem;
+            }
+            .seletor-titulo {
+                font-size: 1.5rem;
+                text-align: center;
+                justify-content: center;
+            }
+            .bairro-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .bairro-select {
+                width: 100%;
+            }
+            .bairro-select select {
+                font-size: 1rem;
+                padding: 12px;
+            }
+            .btn-confirmar {
+                width: 100%;
+                justify-content: center;
+                font-size: 1.1rem;
+                padding: 12px;
+            }
+            .categoria-botoes {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .cat-btn {
+                width: 100%;
+                justify-content: center;
+                font-size: 1.2rem;
+                padding: 12px;
+            }
+            .lista-anunciantes {
+                grid-template-columns: 1fr;
+            }
+            .anunciante-card {
+                padding: 1rem;
+            }
+            .anunciante-nome {
+                font-size: 1.4rem;
+            }
+            footer {
+                font-size: 0.9rem;
+                padding: 1rem;
+            }
+        }
 
-    .logo-area h1 {
-        font-size: 1.8rem;
-        justify-content: center;
-    }
-
-    .nav-botoes {
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .nav-botoes button {
-        font-size: 1rem;
-        padding: 8px 15px;
-    }
-
-    .seletor-card {
-        padding: 1.5rem 1rem;
-    }
-
-    .seletor-titulo {
-        font-size: 1.5rem;
-        text-align: center;
-        justify-content: center;
-    }
-
-    .bairro-row {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .bairro-select {
-        width: 100%;
-    }
-
-    .bairro-select select {
-        font-size: 1rem;
-        padding: 12px;
-    }
-
-    .btn-confirmar {
-        width: 100%;
-        justify-content: center;
-        font-size: 1.1rem;
-        padding: 12px;
-    }
-
-    .categoria-botoes {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .cat-btn {
-        width: 100%;
-        justify-content: center;
-        font-size: 1.2rem;
-        padding: 12px;
-    }
-
-    .lista-anunciantes {
-        grid-template-columns: 1fr;
-    }
-
-    .anunciante-card {
-        padding: 1rem;
-    }
-
-    .anunciante-nome {
-        font-size: 1.4rem;
-    }
-
-    .aviso-simples div {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    footer {
-        font-size: 0.9rem;
-        padding: 1rem;
-    }
-}
-
-/* Para celulares muito pequenos */
-@media screen and (max-width: 480px) {
-    .logo-area h1 {
-        font-size: 1.5rem;
-    }
-
-    .logo-area p {
-        font-size: 0.9rem;
-    }
-
-    .seletor-titulo {
-        font-size: 1.3rem;
-    }
-
-    .categoria-titulo {
-        font-size: 1.3rem;
-    }
-
-    .cat-btn i {
-        font-size: 1.3rem;
-    }
-
-    .anunciante-icone {
-        font-size: 2.5rem;
-    }
-
-    .anunciante-nome {
-        font-size: 1.2rem;
-    }
-}
+        @media screen and (max-width: 480px) {
+            .logo-area h1 {
+                font-size: 1.5rem;
+            }
+            .logo-area p {
+                font-size: 0.9rem;
+            }
+            .seletor-titulo {
+                font-size: 1.3rem;
+            }
+            .cat-btn i {
+                font-size: 1.3rem;
+            }
+            .anunciante-icone {
+                font-size: 2.5rem;
+            }
+            .anunciante-nome {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -437,16 +397,15 @@
                 <div class="bairro-select">
                     <label for="bairroSelect"><i class="fas fa-search-location"></i> Escolha seu bairro</label>
                     <select id="bairroSelect">
-    <option value="" selected disabled>— Selecione um bairro —</option>
-    <option value="augustos vasconcelos">Augustos Vasconcelos</option>
-	<option value="Campo Grande">Campo Grande</option>
-    <option value="cosmos">Cosmos</option>
-    <option value="guaratiba">Guaratiba</option>
-    <option value="inhoaiba">Inhoaiba</option>
-    <option value="paciencia">Paciência</option>
-    <option value="santa cruz">Santa Cruz</option>
-    <option value="sepetiba">Sepetiba</option>
-</select>
+                        <option value="" selected disabled>— Selecione um bairro —</option>
+                        <option value="augustos vasconcelos">Augustos Vasconcelos</option>
+                        <option value="Campo Grande">Campo Grande</option>
+                        <option value="cosmos">Cosmos</option>
+                        <option value="guaratiba">Guaratiba</option>
+                        <option value="inhoaiba">Inhoaiba</option>
+                        <option value="paciencia">Paciência</option>
+                        <option value="santa cruz">Santa Cruz</option>
+                        <option value="sepetiba">Sepetiba</option>
                     </select>
                 </div>
                 <button class="btn-confirmar" id="btnConfirmarBairro">
@@ -474,9 +433,7 @@
                 <i class="fas fa-store" id="iconeCategoria"></i>
                 <span id="tituloCategoria">Estabelecimentos</span>
             </div>
-            <div id="listaAnunciantes" class="lista-anunciantes">
-                <!-- será preenchido via js -->
-            </div>
+            <div id="listaAnunciantes" class="lista-anunciantes"></div>
         </section>
     </main>
 
@@ -496,19 +453,14 @@
     <!-- FORMULÁRIO MODAL (escondido inicialmente) -->
     <div id="modalAnunciante" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; overflow-y: auto;" onclick="fecharModalSeFora(event)">
         <div style="background: white; max-width: 600px; margin: 50px auto; border-radius: 40px; padding: 30px; position: relative; box-shadow: 0 30px 50px rgba(0,0,0,0.5);" onclick="event.stopPropagation()">
-
-            <!-- Botão fechar -->
             <button onclick="fecharModal()" style="position: absolute; top: 20px; right: 20px; background: #f0f0f0; border: none; width: 40px; height: 40px; border-radius: 20px; font-size: 1.5rem; cursor: pointer;">✕</button>
-
             <h2 style="color: #0b4f3a; font-size: 2rem; margin-bottom: 10px;"><i class="fas fa-store"></i> Cadastre seu negócio</h2>
             <p style="color: #666; margin-bottom: 25px; font-size: 1.2rem;">Preencha os dados que entraremos em contato para ativar sua página!</p>
-
             <form id="formAnunciante" onsubmit="enviarCadastroAnunciante(event)">
                 <div style="margin-bottom: 20px;">
                     <label style="font-weight: 600; color: #0b4f3a;">Nome do estabelecimento *</label>
                     <input type="text" id="nomeEstabelecimento" required style="width: 100%; padding: 15px; border: 2px solid #b7dac9; border-radius: 30px; font-size: 1.1rem; margin-top: 5px;">
                 </div>
-
                 <div style="margin-bottom: 20px;">
                     <label style="font-weight: 600; color: #0b4f3a;">Categoria *</label>
                     <select id="categoriaEstabelecimento" required style="width: 100%; padding: 15px; border: 2px solid #b7dac9; border-radius: 30px; font-size: 1.1rem;">
@@ -519,13 +471,12 @@
                         <option value="outros">Outros</option>
                     </select>
                 </div>
-
                 <div style="margin-bottom: 20px;">
                     <label style="font-weight: 600; color: #0b4f3a;">Bairro *</label>
                     <select id="bairroEstabelecimento" required style="width: 100%; padding: 15px; border: 2px solid #b7dac9; border-radius: 30px; font-size: 1.1rem;">
                         <option value="">Selecione</option>
                         <option value="Campo grande">Campo grande</option>
-                        <option value="cosmo">Cosmo</option>
+                        <option value="cosmos">Cosmos</option>
                         <option value="guaratiba">Guaratiba</option>
                         <option value="inhoaiba">Inhoaiba</option>
                         <option value="paciencia">Paciência</option>
@@ -533,30 +484,40 @@
                         <option value="sepetiba">Sepetiba</option>
                     </select>
                 </div>
-
                 <div style="margin-bottom: 20px;">
                     <label style="font-weight: 600; color: #0b4f3a;">WhatsApp *</label>
                     <input type="tel" id="whatsappEstabelecimento" required placeholder="(21) 99999-9999" style="width: 100%; padding: 15px; border: 2px solid #b7dac9; border-radius: 30px; font-size: 1.1rem;">
                 </div>
-
                 <div style="margin-bottom: 20px;">
                     <label style="font-weight: 600; color: #0b4f3a;">E-mail</label>
                     <input type="email" id="emailEstabelecimento" placeholder="opcional" style="width: 100%; padding: 15px; border: 2px solid #b7dac9; border-radius: 30px; font-size: 1.1rem;">
                 </div>
-
                 <div style="margin-bottom: 20px;">
                     <label style="font-weight: 600; color: #0b4f3a;">Endereço completo (opcional)</label>
                     <input type="text" id="enderecoEstabelecimento" placeholder="Rua, número - facilitará a busca" style="width: 100%; padding: 15px; border: 2px solid #b7dac9; border-radius: 30px; font-size: 1.1rem;">
                 </div>
-
                 <div style="background: #f0f9f0; padding: 15px; border-radius: 20px; margin: 20px 0;">
                     <p style="color: #0b4f3a;"><i class="fas fa-info-circle"></i> A plataforma Aki‑pertinho apenas conecta você aos clientes. Não nos envolvemos nas transações, vendas ou negociações. O contato é direto entre cliente e seu estabelecimento.</p>
                 </div>
-
                 <button type="submit" style="background: #25d366; color: white; font-size: 1.5rem; font-weight: bold; padding: 18px 30px; border: none; border-radius: 50px; width: 100%; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;">
                     <i class="fab fa-whatsapp"></i> ENVIAR CADASTRO
                 </button>
             </form>
+        </div>
+    </div>
+
+    <!-- CONTADOR DE VISITAS - 15 DIAS -->
+    <div style="background: #2c3e50; color: white; padding: 15px; text-align: center; border-radius: 60px; margin: 30px auto; max-width: 1200px; font-size: 1.1rem;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 30px;">
+            <div>
+                <i class="fas fa-eye" style="margin-right: 8px;"></i>
+                <span id="contadorVisitas">0</span> visitas nos últimos 15 dias
+            </div>
+            <div style="width: 2px; height: 30px; background: rgba(255,255,255,0.3);"></div>
+            <div>
+                <i class="fas fa-store"></i>
+                <span id="contadorAnunciantes">7</span> bairros | 17 categorias
+            </div>
         </div>
     </div>
 
@@ -579,14 +540,12 @@
 
         function enviarCadastroAnunciante(event) {
             event.preventDefault();
-
             const nome = document.getElementById('nomeEstabelecimento').value;
             const categoria = document.getElementById('categoriaEstabelecimento').value;
             const bairro = document.getElementById('bairroEstabelecimento').value;
             const whatsapp = document.getElementById('whatsappEstabelecimento').value;
             const email = document.getElementById('emailEstabelecimento').value || 'não informado';
             const endereco = document.getElementById('enderecoEstabelecimento').value || 'não informado';
-
             const mensagem = `*NOVO CADASTRO - Aki‑pertinho*%0a%0a` +
                 `*Estabelecimento:* ${nome}%0a` +
                 `*Categoria:* ${categoria}%0a` +
@@ -595,49 +554,30 @@
                 `*E-mail:* ${email}%0a` +
                 `*Endereço:* ${endereco}%0a%0a` +
                 `_Plataforma apenas conecta - não interfere na transação_`;
-
-            // NÚMERO DO RESPONSÁVEL PELA PLATAFORMA (você)
-            const numeroPlataforma = '5521999999999'; // SUBSTITUA PELO SEU NÚMERO
-
+            const numeroPlataforma = '5521999999999';
             window.open(`https://wa.me/${numeroPlataforma}?text=${mensagem}`, '_blank');
-
             alert('Cadastro enviado com sucesso! Em breve entraremos em contato.');
             fecharModal();
         }
-    </script>
 
-    <footer>
-        <p><i class="fas fa-heart" style="color:#c0392b;"></i> Aki‑pertinho — perto de você, descomplicando seu dia a dia</p>
-        <p style="font-size:0.9rem;">exemplo demonstrativo | <a href="#" style="color:#0b4f3a;">fale conosco</a></p>
-    </footer>
-
-    <script>
         (function() {
-            // ------------------ BASE DE DADOS SIMULADA ------------------
             const anunciantes = [
                 // Farmácias
                 { nome: "Farmácia Aki‑Pertinho", categoria: "farmacia", bairro: "Campo Grande", icone: "fa-pills", link: "bairros/Campo Grande/anunciantes/farmacias/farmacia.html" },
                 { nome: "Farmacia Aki-Pertinho2", categoria: "farmacia", bairro: "Campo Grande", icone: "fa-pills", link: "bairros/Campo Grande/anunciantes/farmacias/farmacia2.html" },
-
-
                 // Lanches
                 { nome: "Salgados da Maria", categoria: "lanche", bairro: "Campo Grande", icone: "fa-pizza-slice", link: "bairros/Campo Grande/anunciantes/lanches/salgados.html" },
                 { nome: "lanche akipertinho", categoria: "lanche", bairro: "Campo Grande", icone: "fa-hamburger", link: "bairros/Campo Grande/anunciantes/lanches/lanche_akipertinho.html" },
                 { nome: "Cantinho do Lanche", categoria: "lanche", bairro: "paciencia", icone: "fa-hamburger", link: "bairros/paciencia/anunciantes/lanches/cantinho_do_lanche.html" },
-
-
                 // Açaí
                 { nome: "Açaí Doçura Gelada", categoria: "acai", bairro: "Campo Grande", icone: "fa-ice-cream", link: "bairros/Campo Grande/anunciantes/acai/acaidocuragelada.html" },
                 { nome: "Açaí Gelato", categoria: "acai", bairro: "Campo Grande", icone: "fa-ice-cream", link: "bairros/Campo Grande/anunciantes/acai/acaigelato.html" },
-
-
                 // Outros
                 { nome: "Padaria Pão Quente", categoria: "outros", bairro: "centro", icone: "fa-bread-slice", link: "#" },
                 { nome: "Mercado do Bairro", categoria: "outros", bairro: "vila nova", icone: "fa-shopping-basket", link: "#" },
                 { nome: "Papelaria Escrita Fina", categoria: "outros", bairro: "jardim america", icone: "fa-pen", link: "#" }
             ];
 
-            // Elementos DOM
             const bairroSelect = document.getElementById('bairroSelect');
             const btnConfirmar = document.getElementById('btnConfirmarBairro');
             const categoriasContainer = document.getElementById('categoriasContainer');
@@ -769,29 +709,10 @@
         })();
     </script>
 
-    <!-- CONTADOR DE VISITAS - 15 DIAS -->
-    <div style="background: #2c3e50; color: white; padding: 15px; text-align: center; border-radius: 60px; margin-top: 30px; font-size: 1.1rem;">
-        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 30px;">
-            <div>
-                <i class="fas fa-eye" style="margin-right: 8px;"></i>
-                <span id="contadorVisitas">0</span> visitas nos últimos 15 dias
-            </div>
-            <div style="width: 2px; height: 30px; background: rgba(255,255,255,0.3);"></div>
-            <div>
-                <i class="fas fa-store"></i>
-                <span id="contadorAnunciantes">7</span> bairros | 17 categorias
-            </div>
-        </div>
-    </div>
-
     <script>
-        // FUNÇÕES PARA VOLTAR AO INÍCIO
+        // FUNÇÕES PARA VOLTAR AO INÍCIO (se necessário)
         function voltarParaInicio() {
-            window.location.href = '../../../../index.html';
-        }
-
-        function voltarParaCategorias() {
-            window.location.href = '../../../../bairros/campo grande/index.html';
+            window.location.href = 'index.html';
         }
 
         // CONTADOR DE VISITAS
@@ -799,47 +720,31 @@
             const chave = 'visitas_akipertinho';
             const agora = new Date().getTime();
             const diasEmMs = 15 * 24 * 60 * 60 * 1000;
-
-            let visitas = [];
-            const stored = localStorage.getItem(chave);
-
-            if (stored) {
-                try {
-                    visitas = JSON.parse(stored);
-                    visitas = visitas.filter(data => (agora - data) < diasEmMs);
-                } catch(e) {
-                    visitas = [];
-                }
-            }
-
+            let visitas = JSON.parse(localStorage.getItem(chave)) || [];
+            visitas = visitas.filter(data => (agora - data) < diasEmMs);
             visitas.push(agora);
             localStorage.setItem(chave, JSON.stringify(visitas));
-            document.getElementById('contadorVisitas').textContent = visitas.length;
+            const el = document.getElementById('contadorVisitas');
+            if (el) el.textContent = visitas.length;
         })();
     </script>
-	
-	<footer style="background: #0b4f3a; color: white; text-align: center; padding: 2rem 1rem; margin-top: 3rem; border-radius: 40px 40px 0 0;">
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-        
-        <!-- Frase de efeito -->
-        <p style="font-size: 1.2rem;"><i class="fas fa-heart" style="color: #ffd966;"></i> Aki‑pertinho — perto de você, descomplicando seu dia a dia</p>
-        
-        <!-- Contatos -->
-        <p style="font-size: 1rem;">
-            <i class="fab fa-whatsapp" style="color: #25d366;"></i> 
-            <a href="https://wa.me/5521920121710" target="_blank" style="color: white; text-decoration: none;">(21) 92012-1710</a> 
-            &nbsp;|&nbsp; 
-            <i class="fas fa-envelope" style="color: #f9f3b0;"></i> 
-            <a href="mailto:Akipertinho@gmail.com" style="color: white; text-decoration: none;">Akipertinho@gmail.com</a>
-        </p>
-        
-        <!-- Direitos autorais -->
-        <p style="font-size: 0.9rem; border-top: 1px solid #2e8b57; padding-top: 15px; width: 100%; max-width: 600px;">
-            © 2026 Waldez Velasco. Todos os direitos reservados. Brasil.
-        </p>
-    </div>
-</footer>
+
+    <!-- RODAPÉ PRINCIPAL (único) -->
+    <footer style="background: #0b4f3a; color: white; text-align: center; padding: 2rem 1rem; margin-top: 3rem; border-radius: 40px 40px 0 0;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+            <p style="font-size: 1.2rem;"><i class="fas fa-heart" style="color: #ffd966;"></i> Aki‑pertinho — perto de você, descomplicando seu dia a dia</p>
+            <p style="font-size: 1rem;">
+                <i class="fab fa-whatsapp" style="color: #25d366;"></i> 
+                <a href="https://wa.me/5521920121710" target="_blank" style="color: white; text-decoration: none;">(21) 92012-1710</a> 
+                &nbsp;|&nbsp; 
+                <i class="fas fa-envelope" style="color: #f9f3b0;"></i> 
+                <a href="mailto:Akipertinho@gmail.com" style="color: white; text-decoration: none;">Akipertinho@gmail.com</a>
+            </p>
+            <p style="font-size: 0.9rem; border-top: 1px solid #2e8b57; padding-top: 15px; width: 100%; max-width: 600px;">
+                © 2026 Waldez Velasco. Todos os direitos reservados. Brasil.
+            </p>
+        </div>
+    </footer>
 
 </body>
-
 </html>
