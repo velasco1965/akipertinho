@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
     <title>Farmácia Aki‑Pertinho</title>
-    <!-- Font Awesome para ícones (whatsapp, etc) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -14,20 +13,57 @@
             font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
         }
         body {
-            background-color: #f0f9f0;  /* tom suave de verde farmácia */
-            color: #1e3a3a;
-            line-height: 1.5;
+            background: #e6f4ec;
             padding: 1rem;
         }
         .container {
             max-width: 1280px;
             margin: 0 auto;
             background: white;
-            border-radius: 32px 32px 24px 24px;
-            box-shadow: 0 12px 30px rgba(0, 40, 20, 0.1);
-            overflow: hidden;
-            padding: 2rem 2rem 1.5rem 2rem;
+            border-radius: 40px;
+            box-shadow: 0 20px 40px rgba(11,79,58,0.15);
+            padding: 2rem;
         }
+
+        /* BARRA DE NAVEGAÇÃO */
+        .nav-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .btn-voltar {
+            background: white;
+            border: 2px solid #0b4f3a;
+            color: #0b4f3a;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 10px 25px;
+            border-radius: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .btn-voltar:hover {
+            background: #0b4f3a;
+            color: white;
+        }
+
+        /* TARJA DE SUB‑BAIRRO */
+        .subbairro-tarja {
+            background: #FFD700;
+            border: 2px solid #0000FF;
+            color: #0000FF;
+            padding: 6px 20px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
         header {
             text-align: center;
             margin-bottom: 2rem;
@@ -35,311 +71,250 @@
         header h1 {
             font-size: 2.5rem;
             color: #0b4f3a;
-            letter-spacing: -0.5px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
             flex-wrap: wrap;
         }
         header h1 i {
-            color: #25d366;  /* verde whatsapp */
-            font-size: 2.2rem;
-        }
-        header p {
-            color: #2d6a4f;
-            font-size: 1.2rem;
-            font-weight: 300;
+            color: #2ecc71;
         }
 
-        /* Seção de promoções */
-        .promo-section {
-            background: linear-gradient(145deg, #e2f0e7, #d0e6da);
-            border-radius: 28px;
-            padding: 2rem 1.8rem;
-            margin-bottom: 2.8rem;
+        /* HORÁRIO DE FUNCIONAMENTO */
+        .info-horario {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px 0 30px;
+            background: #e6f4ec;
+            padding: 15px 25px;
+            border-radius: 60px;
+            border: 2px solid #0b4f3a;
         }
-        .promo-section h2 {
-            font-size: 2rem;
+        .info-horario i {
             color: #0b4f3a;
-            margin-bottom: 1.5rem;
+            margin-right: 10px;
+        }
+        .horario-texto {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0b4f3a;
+            background: white;
+            padding: 5px 20px;
+            border-radius: 40px;
+        }
+
+        /* SEÇÕES */
+        .categoria-titulo {
+            background: linear-gradient(135deg, #0b4f3a, #1e7b54);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 0 60px 60px 0;
+            width: fit-content;
+            margin: 40px 0 30px -20px;
+            box-shadow: 0 10px 25px rgba(11,79,58,0.3);
+            font-size: 1.8rem;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        .promo-grid {
-            display: flex;
-            gap: 2rem;
-            align-items: stretch;
-            flex-wrap: wrap;
-        }
-        .promo-destaque {
-            flex: 1 1 300px;
-            background: white;
-            border-radius: 24px;
-            padding: 1.5rem;
-            box-shadow: 0 8px 18px rgba(0, 30, 10, 0.1);
-            text-align: center;
-        }
-        .promo-destaque img {
-            width: 100%;
-            max-width: 320px;
-            height: auto;
-            border-radius: 20px;
-            margin-bottom: 1rem;
-            border: 3px solid white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .promo-destaque p {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #1a724c;
-        }
-        .promo-ads {
-            flex: 2 1 400px;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            justify-content: center;
-        }
-        .ad-item {
-            background: white;
-            border-radius: 50px 18px 18px 50px;  /* estilo divertido */
-            padding: 1rem 2rem;
-            font-size: 1.3rem;
-            font-weight: 500;
-            box-shadow: 0 5px 12px rgba(0, 70, 30, 0.1);
-            border-left: 10px solid #2ecc71;
-            transition: transform 0.2s;
-        }
-        .ad-item i {
-            color: #f39c12;
-            margin-right: 15px;
-            font-size: 1.6rem;
-            vertical-align: middle;
-        }
-        .ad-item:hover {
-            transform: scale(1.02);
-            background: #f3fcf7;
-        }
 
-        /* Tabela de produtos */
-        .tabela-section {
-            margin-bottom: 3rem;
-        }
-        .tabela-section h2 {
-            font-size: 2rem;
-            color: #0b4f3a;
-            margin-bottom: 1.2rem;
-            border-left: 8px solid #2ecc71;
-            padding-left: 1rem;
-        }
-        .table-responsive {
+        .tabela-wrapper {
             overflow-x: auto;
-            border-radius: 24px;
+            margin: 25px 0;
+            border-radius: 30px;
             background: white;
-            box-shadow: 0 6px 18px rgba(0, 40, 20, 0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
         table {
             width: 100%;
             border-collapse: collapse;
             min-width: 500px;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
         }
         th {
             background: #0b4f3a;
             color: white;
-            font-weight: 600;
-            font-size: 1.2rem;
-            padding: 1rem 0.8rem;
+            padding: 15px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
         }
         td {
-            padding: 1rem 0.8rem;
+            padding: 12px 15px;
             border-bottom: 1px solid #c0e0d0;
-            font-size: 1.1rem;
-        }
-        tr:last-child td {
-            border-bottom: none;
+            font-size: 1rem;
         }
         tr:hover td {
-            background-color: #ebf9f0;
+            background: #e6f4ec;
         }
         .preco {
             font-weight: 700;
-            color: #117a4b;
+            color: #e67e22;
+            font-size: 1.2rem;
+            white-space: nowrap;
         }
 
-        /* Formulário de pedido (whatsapp) */
+        /* FORMULÁRIO WHATSAPP (completo, igual ao Cantinho) */
         .pedido-section {
-            background: #f1fbf5;
-            border-radius: 32px;
-            padding: 2rem 2rem 2.2rem;
-            border: 2px dashed #2e8b57;
+            background: #e6f4ec;
+            border-radius: 40px;
+            padding: 2.5rem;
+            border: 3px dashed #0b4f3a;
+            margin-top: 2.5rem;
         }
         .pedido-section h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #0b4f3a;
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 1rem;
+            gap: 15px;
+            margin-bottom: 1.5rem;
         }
         .form-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
         }
         .campo {
             display: flex;
             flex-direction: column;
-            gap: 0.3rem;
+            gap: 0.5rem;
         }
         .campo.full-width {
             grid-column: 1 / -1;
         }
         label {
             font-weight: 600;
-            color: #0f553b;
+            color: #0b4f3a;
             font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         input, select, textarea {
-            padding: 0.9rem 1rem;
+            padding: 1rem 1.2rem;
             border: 2px solid #b7dac9;
-            border-radius: 24px;
+            border-radius: 30px;
             font-size: 1rem;
             background: white;
             transition: 0.2s;
-            outline: none;
         }
         input:focus, select:focus, textarea:focus {
-            border-color: #1e9b5e;
-            box-shadow: 0 0 0 4px rgba(30, 155, 94, 0.2);
+            border-color: #0b4f3a;
+            box-shadow: 0 0 0 4px rgba(11,79,58,0.1);
+            outline: none;
         }
-        button {
-            background: #25d366;
+        .whatsapp-btn {
+            background: linear-gradient(145deg, #25d366, #20b859);
             color: white;
             font-size: 1.6rem;
             font-weight: 700;
-            padding: 1.2rem 2rem;
+            padding: 1.3rem 2.5rem;
             border: none;
-            border-radius: 60px;
-            display: inline-flex;
+            border-radius: 80px;
+            display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-            transition: 0.2s;
-            border: 2px solid transparent;
             width: 100%;
-            max-width: 500px;
-            margin: 1.5rem auto 1rem;
+            max-width: 550px;
+            margin: 2rem auto;
+            transition: 0.3s;
+            box-shadow: 0 15px 30px rgba(37,211,102,0.4);
         }
-        button:hover {
-            background: #20b859;
-            box-shadow: 0 6px 14px rgba(0, 100, 40, 0.4);
-            transform: scale(1.02);
-        }
-        button i {
-            font-size: 2rem;
-        }
-        .whatsapp-note {
-            text-align: center;
-            color: #2d6a4f;
-            font-size: 1rem;
-            margin-top: 0.8rem;
-        }
-        .whatsapp-note a {
-            color: #0e5c3b;
-            font-weight: 600;
-            word-break: break-all;
-        }
-        footer {
-            text-align: center;
-            margin-top: 2.5rem;
-            font-size: 1rem;
-            color: #467a62;
-            border-top: 1px solid #b7dac9;
-            padding-top: 1.5rem;
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
         }
 
-        /* Responsividade extra */
-        @media (max-width: 680px) {
-            .container {
-                padding: 1.5rem 1rem;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-            .promo-destaque p {
-                font-size: 1.2rem;
-            }
-            .ad-item {
-                font-size: 1.1rem;
-                padding: 0.8rem 1.2rem;
-            }
-            button {
-                font-size: 1.3rem;
-                padding: 1rem 1.5rem;
-            }
+        /* CONTADOR DE PEDIDOS */
+        .contador-pedidos {
+            background: linear-gradient(145deg, #25d366, #20b859);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 80px;
+            text-align: center;
+            margin: 30px 0;
+            font-size: 1.4rem;
+            font-weight: bold;
+            box-shadow: 0 10px 25px rgba(37,211,102,0.4);
         }
-        @media (max-width: 480px) {
-            .promo-destaque img {
-                max-width: 100%;
-            }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: #e6f4ec;
+            border-radius: 60px;
+            color: #0b4f3a;
+        }
+
+        @media (max-width: 680px) {
+            .container { padding: 1.2rem; }
+            header h1 { font-size: 2rem; }
+            .info-horario { flex-direction: column; text-align: center; gap: 10px; }
         }
     </style>
 </head>
 <body>
-    <!-- BARRA DE NAVEGAÇÃO -->
-    <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; padding: 10px;">
-        <button onclick="voltarParaInicio()" style="background: white; border: 2px solid #0b4f3a; color: #0b4f3a; font-size: 1.1rem; font-weight: 600; padding: 10px 25px; border-radius: 40px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
-            <i class="fas fa-home"></i> Início
-        </button>
-        <button onclick="voltarParaCategorias()" style="background: white; border: 2px solid #0b4f3a; color: #0b4f3a; font-size: 1.1rem; font-weight: 600; padding: 10px 25px; border-radius: 40px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
-            <i class="fas fa-arrow-left"></i> Voltar para categorias
-        </button>
-    </div>
-<div class="container">
-    <header>
-        <h1>
-            <i class="fas fa-pills"></i> 
-            Farmácia Aki‑Pertinho
-            <i class="fab fa-whatsapp"></i>
-        </h1>
-        <p>Saúde e proximidade – tudo para você!</p>
-    </header>
+    <div class="container">
+        <!-- BARRA DE NAVEGAÇÃO (apenas Início) -->
+        <div class="nav-bar">
+            <button class="btn-voltar" onclick="voltarParaInicio()">
+                <i class="fas fa-home"></i> Início
+            </button>
+        </div>
 
-    <!-- ESPAÇO PROMOÇÕES DO DIA (foto + anúncios) -->
-    <section class="promo-section">
-        <h2><i class="fas fa-tags" style="color:#e67e22;"></i> Promoções do dia</h2>
-        <div class="promo-grid">
-            <!-- Foto / destaque principal -->
-            <div class="promo-destaque">
-                <img src="https://placehold.co/600x400/2ecc71/white?text=Oferta+do+Dia" alt="Promoção do dia - destaque">
-                <p><i class="fas fa-star" style="color:gold;"></i> 30% off em antibióticos</p>
-            </div>
-            <!-- Anúncios de produtos (cards laterais) -->
-            <div class="promo-ads">
-                <div class="ad-item"><i class="fas fa-bolt"></i> Dipirona líquida – 20% off</div>
-                <div class="ad-item"><i class="fas fa-heartbeat"></i> Vitaminas C + Zinco: leve 2 pague 1</div>
-                <div class="ad-item"><i class="fas fa-lungs"></i> Máscaras descartáveis com 40% de desconto</div>
-                <div class="ad-item"><i class="fas fa-bone"></i> Ômega 3: preço especial de R$ 49,90</div>
+        <!-- TARJA DE SUB‑BAIRRO (opcional, mas pode ser usada) -->
+        <div style="text-align: center;">
+            <span class="subbairro-tarja">
+                <i class="fas fa-map-pin"></i> Monteiro
+            </span>
+        </div>
+
+        <header>
+            <h1>
+                <i class="fas fa-pills"></i> Farmácia Aki‑Pertinho
+            </h1>
+            <p style="font-size: 1.2rem; color: #0b4f3a;">📍 Rua Exemplo, 123 – Monteiro, Campo Grande</p>
+        </header>
+
+        <!-- HORÁRIO DE FUNCIONAMENTO -->
+        <div class="info-horario">
+            <span><i class="fas fa-clock"></i> <strong>Horário:</strong></span>
+            <span class="horario-texto"><i class="fas fa-calendar-alt"></i> Segunda a sábado • 8h às 20h</span>
+        </div>
+
+        <!-- PROMOÇÕES -->
+        <div class="categoria-titulo">💊 Promoções do dia</div>
+        <div class="tabela-wrapper">
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; padding: 10px;">
+                <div style="background: white; border-radius: 30px; padding: 15px; flex: 1 1 200px; text-align: center; border: 2px solid #0b4f3a;">
+                    <i class="fas fa-star" style="color: gold;"></i>
+                    <p style="font-weight: bold;">30% off em antibióticos</p>
+                </div>
+                <div style="background: white; border-radius: 30px; padding: 15px; flex: 1 1 200px; text-align: center; border: 2px solid #0b4f3a;">
+                    <i class="fas fa-bolt"></i>
+                    <p>Dipirona líquida – 20% off</p>
+                </div>
+                <div style="background: white; border-radius: 30px; padding: 15px; flex: 1 1 200px; text-align: center; border: 2px solid #0b4f3a;">
+                    <i class="fas fa-heartbeat"></i>
+                    <p>Vitaminas C + Zinco: leve 2 pague 1</p>
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- TABELA DE PRODUTOS -->
-    <section class="tabela-section">
-        <h2><i class="fas fa-table"></i> Tabela de produtos</h2>
-        <div class="table-responsive">
+        <!-- TABELA DE MEDICAMENTOS -->
+        <div class="categoria-titulo">📋 Medicamentos</div>
+        <div class="tabela-wrapper">
             <table>
                 <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Descrição</th>
-                        <th>Preço</th>
-                    </tr>
+                    <tr><th>Produto</th><th>Descrição</th><th>Preço</th></tr>
                 </thead>
                 <tbody>
                     <tr><td>Paracetamol 500mg</td><td>20 comprimidos genérico</td><td class="preco">R$ 12,90</td></tr>
@@ -351,184 +326,127 @@
                 </tbody>
             </table>
         </div>
-        <p style="margin-top: 0.5rem; color: #2d6a4f;"><i class="fas fa-phone-alt"></i> Consulte nossos fitoterápicos e genéricos!</p>
-    </section>
 
-    <!-- FORMULÁRIO + WHATSAPP COM DADOS DO CLIENTE E PEDIDO -->
-    <section class="pedido-section">
-        <h2><i class="fab fa-whatsapp" style="color:#25d366;"></i> Peça agora via WhatsApp</h2>
-        <p style="margin-bottom: 0.5rem;">Preencha seus dados e a descrição do pedido. O link conterá a plataforma <strong>Aki‑pertinho</strong> e todas as informações.</p>
-
-        <form id="orderForm">
-            <div class="form-grid">
-                <div class="campo">
-                    <label for="nome">Nome completo <span style="color:#c0392b;">*</span></label>
-                    <input type="text" id="nome" placeholder="Ex: Maria da Silva" required>
+        <!-- FORMULÁRIO WHATSAPP COMPLETO -->
+        <section class="pedido-section">
+            <h2><i class="fab fa-whatsapp"></i> Faça seu pedido</h2>
+            <form id="formPedido">
+                <div class="form-grid">
+                    <div class="campo">
+                        <label><i class="fas fa-user"></i> Nome completo *</label>
+                        <input type="text" id="nome" required>
+                    </div>
+                    <div class="campo">
+                        <label><i class="fas fa-map-marked-alt"></i> Endereço *</label>
+                        <input type="text" id="endereco" required>
+                    </div>
+                    <div class="campo">
+                        <label><i class="fas fa-credit-card"></i> Pagamento *</label>
+                        <select id="pagamento" required>
+                            <option value="">Selecione</option>
+                            <option value="Dinheiro">Dinheiro</option>
+                            <option value="Cartão de crédito">Cartão de crédito</option>
+                            <option value="Cartão de débito">Cartão de débito</option>
+                            <option value="Pix">Pix</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label><i class="fas fa-phone-alt"></i> Telefone</label>
+                        <input type="tel" id="telefone">
+                    </div>
+                    <div class="campo full-width">
+                        <label><i class="fas fa-pencil-alt"></i> Seu pedido *</label>
+                        <textarea id="descricao" rows="3" required></textarea>
+                    </div>
                 </div>
-                <div class="campo">
-                    <label for="endereco">Endereço <span style="color:#c0392b;">*</span></label>
-                    <input type="text" id="endereco" placeholder="Rua, número, bairro" required>
-                </div>
-                <div class="campo">
-                    <label for="pagamento">Forma de pagamento <span style="color:#c0392b;">*</span></label>
-                    <select id="pagamento" required>
-                        <option value="" disabled selected>Selecione</option>
-                        <option value="Dinheiro">Dinheiro</option>
-                        <option value="Cartão de crédito">Cartão de crédito</option>
-                        <option value="Cartão de débito">Cartão de débito</option>
-                        <option value="Pix">Pix</option>
-                    </select>
-                </div>
-                <div class="campo">
-                    <label for="telefone">Telefone (opcional)</label>
-                    <input type="tel" id="telefone" placeholder="(11) 99999-9999">
-                </div>
-                <div class="campo full-width">
-                    <label for="descricao">Descrição do pedido <span style="color:#c0392b;">*</span></label>
-                    <textarea id="descricao" rows="3" placeholder="Ex: 1 caixa de paracetamol, 2 vitaminas C..." required></textarea>
-                </div>
+                <button type="button" class="whatsapp-btn" id="gerarLink">
+                    <i class="fab fa-whatsapp"></i> Enviar pedido
+                </button>
+            </form>
+            <div id="linkContainer" style="display: none; text-align: center; margin-top: 15px;">
+                <a href="#" id="linkWhatsApp" target="_blank">Clique aqui se não for redirecionado</a>
             </div>
+            <p style="text-align: center; margin-top: 1rem;"><i class="fas fa-info-circle"></i> Pedido enviado com a identificação <strong>Aki‑pertinho</strong>.</p>
+        </section>
 
-            <!-- Botão que gera link dinâmico do WhatsApp com todos os dados -->
-            <button type="button" id="gerarLinkWhatsApp">
-                <i class="fab fa-whatsapp"></i> Enviar pedido via WhatsApp
-            </button>
-        </form>
-
-        <!-- link de fallback (aparece após gerar) -->
-        <div id="linkContainer" class="whatsapp-note" style="display: none;">
-            <i class="fas fa-external-link-alt"></i> Se não for redirecionado automaticamente, 
-            <a href="#" id="whatsappLink" target="_blank">clique aqui</a> para enviar.
+        <!-- CONTADOR DE PEDIDOS -->
+        <div class="contador-pedidos">
+            <i class="fas fa-chart-line"></i>
+            <span id="contadorPedidos">0</span> pedidos realizados!
         </div>
-        <p style="font-size:0.9rem; margin-top:1.5rem; background: #d9f0e3; padding: 0.5rem 1rem; border-radius: 50px;">
-            <i class="fas fa-info-circle"></i> Seu pedido será enviado com a identificação <strong>"Aki‑pertinho"</strong> + seus dados.
-        </p>
-    </section>
 
-    <footer>
-        <p>Farmácia Aki‑pertinho &copy; 2025 | Atendimento de segunda a sábado, 8h às 20h</p>
-        <p style="font-size:0.9rem;"><i class="fab fa-whatsapp"></i> (11) 99999-9999 (exemplo, troque pelo número real)</p>
-    </footer>
-</div>
+        <footer>
+            <p><i class="fab fa-whatsapp"></i> (21) 99999-9999</p>
+            <p><i class="fas fa-clock"></i> Segunda a sábado: 8h às 20h</p>
+        </footer>
+    </div>
 
-<script>
-    (function() {
-        // Número da farmácia no formato internacional (sem '+' ou espaços)
-        const FARMACIA_NUMERO = '5511999999999';  // substitua pelo número real da farmácia (com DDI 55)
+    <script>
+        // ===== CONTADOR AUTOMÁTICO DE PEDIDOS =====
+        let chaveContador = 'pedidos_farmacia';
+        let contador = localStorage.getItem(chaveContador) ? parseInt(localStorage.getItem(chaveContador)) : 0;
 
-        // Elementos do formulário
-        const nomeInput = document.getElementById('nome');
-        const enderecoInput = document.getElementById('endereco');
-        const pagamentoSelect = document.getElementById('pagamento');
-        const telefoneInput = document.getElementById('telefone');
-        const descricaoText = document.getElementById('descricao');
-        const botao = document.getElementById('gerarLinkWhatsApp');
-        const linkContainer = document.getElementById('linkContainer');
-        const whatsappLink = document.getElementById('whatsappLink');
+        window.onload = function() {
+            let el = document.getElementById('contadorPedidos');
+            if (el) el.innerText = contador;
+        };
 
-        function construirMensagem() {
-            // Validação simples de campos obrigatórios
-            if (!nomeInput.value.trim() || !enderecoInput.value.trim() || !pagamentoSelect.value || !descricaoText.value.trim()) {
-                alert('Por favor, preencha todos os campos obrigatórios (nome, endereço, forma de pagamento e descrição).');
-                return null;
+        document.getElementById('gerarLink').addEventListener('click', function() {
+            const nome = document.getElementById('nome').value.trim();
+            const endereco = document.getElementById('endereco').value.trim();
+            const pagamento = document.getElementById('pagamento').value;
+            const telefone = document.getElementById('telefone').value.trim() || 'não informado';
+            const descricao = document.getElementById('descricao').value.trim();
+
+            if (!nome || !endereco || !pagamento || !descricao) {
+                alert('Preencha nome, endereço, pagamento e pedido.');
+                return;
             }
 
-            // Dados do cliente
-            const nome = nomeInput.value.trim();
-            const endereco = enderecoInput.value.trim();
-            const pagamento = pagamentoSelect.value;
-            const telefone = telefoneInput.value.trim() || '(não informado)';
-            const descricao = descricaoText.value.trim();
+            contador++;
+            localStorage.setItem(chaveContador, contador);
+            document.getElementById('contadorPedidos').innerText = contador;
 
-            // Montagem da mensagem formatada (com marcadores do WhatsApp: *negrito* e quebras de linha)
-            let mensagem = `*Pedido - Plataforma Aki‑pertinho*%0a`;  // %0a = line feed
-            mensagem += `*Nome:* ${nome}%0a`;
-            mensagem += `*Endereço:* ${endereco}%0a`;
-            mensagem += `*Pagamento:* ${pagamento}%0a`;
-            mensagem += `*Telefone:* ${telefone}%0a`;
-            mensagem += `*Descrição do pedido:*%0a${descricao}`;
+            const mensagem = `🪴 *Aki‑pertinho Farmácia* 🏠\n\n` +
+                `*Nome:* ${nome}\n` +
+                `*Endereço:* ${endereco}\n` +
+                `*Pagamento:* ${pagamento}\n` +
+                `*Telefone:* ${telefone}\n\n` +
+                `*Pedido:*\n${descricao}`;
 
-            return mensagem;
+            const numero = '5521999999999';
+            window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`, '_blank');
+
+            document.getElementById('linkWhatsApp').href = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+            document.getElementById('linkContainer').style.display = 'block';
+        });
+
+        // FUNÇÃO PARA VOLTAR AO INÍCIO
+        function voltarParaInicio() {
+            window.location.href = '../../../../index.html';
         }
+    </script>
 
-        function gerarLinkWhatsApp() {
-            const mensagem = construirMensagem();
-            if (!mensagem) return;  // validação falhou
-
-            // Cria o link do WhatsApp (formato wa.me)
-            const link = `https://wa.me/${FARMACIA_NUMERO}?text=${mensagem}`;
-
-            // Abre em nova aba
-            window.open(link, '_blank');
-
-            // Mostra o link de fallback
-            whatsappLink.href = link;
-            linkContainer.style.display = 'block';
-        }
-
-        botao.addEventListener('click', gerarLinkWhatsApp);
-
-        // Opcional: permitir enviar com Enter? mas melhor manter só no botão
-        // Exibe link anterior se já tiver gerado (opcional)
-    })();
-</script>
-
-<!-- observação: o número do WhatsApp deve ser alterado no script para o número real da farmácia -->
-<!-- CONTADOR DE VISITAS - 15 DIAS -->
-<div style="background: #2c3e50; color: white; padding: 15px; text-align: center; border-radius: 60px; margin-top: 30px; font-size: 1.1rem;">
-    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 30px;">
-        <div>
-            <i class="fas fa-eye" style="margin-right: 8px;"></i> 
-            <span id="contadorVisitas">0</span> visitas nos últimos 15 dias
-        </div>
-        <div style="width: 2px; height: 30px; background: rgba(255,255,255,0.3);"></div>
-        <div>
-            <i class="fas fa-store"></i> 
-            <span id="contadorAnunciantes">7</span> bairros | 17 categorias
+    <!-- CONTADOR DE VISITAS -->
+    <div style="background: #2c3e50; color: white; padding: 15px; text-align: center; border-radius: 60px; margin: 30px auto; max-width: 1280px; font-size: 1.1rem;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 30px;">
+            <div><i class="fas fa-eye"></i> <span id="contadorVisitas">0</span> visitas nos últimos 15 dias</div>
+            <div style="width: 2px; height: 30px; background: rgba(255,255,255,0.3);"></div>
+            <div><i class="fas fa-store"></i> 7 bairros | 17 categorias</div>
         </div>
     </div>
-</div>
 
-<script>
-// FUNÇÕES PARA VOLTAR AO INÍCIO
-function voltarParaInicio() {
-    window.location.href = '../../../../index.html';
-}
-
-function voltarParaCategorias() {
-    window.location.href = 'file:///C:/Users/VELASCO/Documents/akipertinho/index.html'; 
-    // ou se não tiver essa página, use o mesmo link do inicio por enquanto
-}
-// CONTADOR DE VISITAS (simples, usando localStorage)
-(function() {
-    const chave = 'visitas_akipertinho';
-    const agora = new Date().getTime();
-    const diasEmMs = 15 * 24 * 60 * 60 * 1000; // 15 dias em milissegundos
-    
-    let visitas = [];
-    const stored = localStorage.getItem(chave);
-    
-    if (stored) {
-        try {
-            visitas = JSON.parse(stored);
-            // remove visitas mais antigas que 15 dias
+    <script>
+        (function() {
+            const chave = 'visitas_akipertinho';
+            const agora = new Date().getTime();
+            const diasEmMs = 15 * 24 * 60 * 60 * 1000;
+            let visitas = JSON.parse(localStorage.getItem(chave)) || [];
             visitas = visitas.filter(data => (agora - data) < diasEmMs);
-        } catch(e) {
-            visitas = [];
-        }
-    }
-    
-    // adiciona a visita atual
-    visitas.push(agora);
-    
-    // salva de volta
-    localStorage.setItem(chave, JSON.stringify(visitas));
-    
-    // atualiza o contador na tela
-    document.getElementById('contadorVisitas').textContent = visitas.length;
-    
-    // opcional: mostra também o número de anunciantes (pode ser dinâmico depois)
-})();
-</script>
+            visitas.push(agora);
+            localStorage.setItem(chave, JSON.stringify(visitas));
+            document.getElementById('contadorVisitas').textContent = visitas.length;
+        })();
+    </script>
 </body>
 </html>
